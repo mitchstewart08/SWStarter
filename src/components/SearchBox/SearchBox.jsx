@@ -26,7 +26,7 @@ export default class SearchBox extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.handleSearch(this.state.input);
+    this.props.handleSearch(this.state.input, this.state.selectedOption);
   }
 
   render() {
