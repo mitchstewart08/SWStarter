@@ -4,18 +4,35 @@ export default class SearchBox extends Component {
   constructor(props){
     super(props);
     this.state = {
-      input: '',
+      input: null,
       selectedOption: 'person'
     }
     this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleOptionChange(changeEvent){
+  handleOptionChange(event){
     this.setState({
-      selectedOption: changeEvent.target.value
+      selectedOption: event.target.value
     })
   }
+
+  handleSearchChange(event){
+    this.setState({
+      input: event.target.value
+    })
+    console.log(this.state.input);
+  }
+
+  handleSubmit(event){
+
+  }
+
   render() {
+    const moviePlaceHolder = "e.g. A New Hope, Empire Strikes Back, Rogue One";
+    const personPlaceHolder = "e.g. Chewbacca, Yoda, Boba Fett"
+
     return (
       <div className="box searchBox">
         <form>
@@ -30,7 +47,10 @@ export default class SearchBox extends Component {
                 onChange={this.handleOptionChange} value="movie"/>Movie
           </label>
         </div>
-
+        <input type="text" name="query" onChange={this.handleSearchChange}
+        placeholder={this.state.selectedOption === 'person' ? personPlaceHolder : moviePlaceHolder}/>
+        
+        <button disabled={this.state.input ? '' : 'true'} onClick={this.handleSubmit}>Search</button>
         </form>
 
       </div>
