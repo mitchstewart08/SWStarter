@@ -15,7 +15,7 @@ function ResultsBox(props) {
           <p>{name}</p>
             <Link to={{
               pathname: `/details/${name}`,
-              state: {result: item}
+              state: {details: item}
             }}>
             <button className="btn"> See Details</button>
             </Link>
