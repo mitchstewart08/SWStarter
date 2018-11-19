@@ -8,7 +8,8 @@ export default class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      results : ''
+      results : [],
+      loading: true
     }
 
     this.handleSearch = this.handleSearch.bind(this)
@@ -21,8 +22,12 @@ export default class Home extends Component {
     axios.get(url)
           .then((res)=>{
             console.log(res);
-            this.setState({results: res.data.results})
-          })
+            if(res.data.count > 0){
+            this.setState({
+              results: res.data,
+              loading: false
+            })
+          }})      
           .catch((err)=> console.log(err))
   }
   
@@ -30,7 +35,7 @@ export default class Home extends Component {
     return (
     <div className="main-view">
       <SearchBox  handleSearch={this.handleSearch}/>
-      <ResultsBox results={this.state.results}/>
+      <ResultsBox searchResults={this.state.results} loading={this.state.loading}/>
     </div>)
   }
 }

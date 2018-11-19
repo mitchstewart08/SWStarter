@@ -5,7 +5,7 @@ export default class SearchBox extends Component {
     super(props);
     this.state = {
       input: null,
-      selectedOption: 'person'
+      selectedOption: 'person',
     }
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
