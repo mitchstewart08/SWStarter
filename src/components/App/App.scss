@@ -1,0 +1,42 @@
+//COLORS
+$primary-color: #000;
+$secondary-color: #0ab463;
+$secondaryDarker-color: #089954;
+$inactive-color: #c4c4c4;
+$highlight-color: #0094ff;
+$background-color: #fff;
+$appBackground-color: #ededed;
+//Fonts
+$font-stack: 'Montserrat', sans-serif;
+
+.App{
+  font-size: 16px;
+  background-color: $appBackground-color;
+  height: 100vh;
+  width: 100vw;
+}
+
+// h2, h3{
+//   font: $font-stack;
+//   color: $secondary-color;
+// }
+
+.Header{
+  text-align: center;
+  background-color: $background-color;
+  .logo{
+    display: inline-block;
+    color: $secondary-color;
+    font-family: $font-stack;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: .5em auto;
+    &:hover{
+      color: $secondaryDarker-color
+    }
+    &:visited{
+      color: $secondary-color;
+    }
+  }
+}
