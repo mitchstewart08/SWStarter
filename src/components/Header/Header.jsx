@@ -10,8 +10,8 @@ export default class Header extends Component {
 
   render() {
     return (
-      <div>
-        <Link to="/">{this.props.title}</Link>
+      <div className="Header">
+        <Link to="/" className="logo">{this.props.title}</Link>
       </div>
     )
   }
