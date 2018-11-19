@@ -22,11 +22,11 @@ export default class SearchBox extends Component {
     this.setState({
       input: event.target.value
     })
-    console.log(this.state.input);
   }
 
   handleSubmit(event){
-
+    event.preventDefault();
+    this.props.handleSearch(this.state.input);
   }
 
   render() {
@@ -50,7 +50,7 @@ export default class SearchBox extends Component {
         <input type="text" name="query" onChange={this.handleSearchChange}
         placeholder={this.state.selectedOption === 'person' ? personPlaceHolder : moviePlaceHolder}/>
         
-        <button disabled={this.state.input ? '' : 'true'} onClick={this.handleSubmit}>Search</button>
+        <button disabled={this.state.input ? false : true} onClick={this.handleSubmit}>Search</button>
         </form>
 
       </div>
