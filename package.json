@@ -108,5 +108,9 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "1.15.2"
   }
 }

@@ -6,6 +6,8 @@ $inactive-color: #c4c4c4;
 $highlight-color: #0094ff;
 $background-color: #fff;
 $appBackground-color: #ededed;
+$light-shadow-color: #dadada;
+$dark-shadow-color: rgba(132, 132, 132, 0.75);
 //Fonts
 $font-stack: 'Montserrat', sans-serif;
 
@@ -24,13 +26,15 @@ $font-stack: 'Montserrat', sans-serif;
 .Header{
   text-align: center;
   background-color: $background-color;
+  box-shadow: $light-shadow-color 2px;
+  margin-bottom: 30px;
   .logo{
     display: inline-block;
     color: $secondary-color;
     font-family: $font-stack;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.25rem; //18px
     margin: .5em auto;
     &:hover{
       color: $secondaryDarker-color
@@ -38,5 +42,26 @@ $font-stack: 'Montserrat', sans-serif;
     &:visited{
       color: $secondary-color;
     }
+  }
+}
+
+.box{
+  background-color: $background-color;
+  border: 1px $light-shadow-color;
+  box-shadow: 0 1px 2px 0 $dark-shadow-color;
+  padding: 30px;
+}
+
+
+.searchBox{
+  p{
+    font-size: 	0.875rem; //18px
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    font-family: $font-stack;
+    color: #383838;
   }
 }
