@@ -133,7 +133,8 @@ button{
 
   .result{
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 6fr 1.5fr;
+  
     font-size: 1.5rem;
     font-weight: bold;
     border-bottom: 1px solid #c4c4c4;
@@ -142,5 +143,11 @@ button{
   button{
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-right: 0;
   }
+}
+
+.detailsBox{
+  width: 50vw;
+  margin: 0 auto;
 }

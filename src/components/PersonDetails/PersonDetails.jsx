@@ -5,10 +5,11 @@ const PersonDetails = props => {
   const {person, films} = props
   console.log(films[0]);
   return (
-    <div>
-       <div className="personDetails">
-        <h3>{person.name}</h3>
-        <div className="detailContainer">
+    <div className="detailsContainer">
+      <h3>{person.name}</h3>
+       <div className=" detailsGrid">
+       <div className="grid-item">
+        
           <h4>Details</h4>
           <ul className="personDetails">
             <li>Birth Year: {person.birth_year}</li>
@@ -18,8 +19,9 @@ const PersonDetails = props => {
             <li>Height: {person.height}</li>
             <li>Mass: {person.mass}</li>
           </ul>
+          <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
         </div>
-        <div className="detailContainer">
+        <div className="detailContainer movieContainer">
         <h4>Movies</h4>
         <p>
         {films.map((film) => (
@@ -32,7 +34,7 @@ const PersonDetails = props => {
           ))}
         </p>
         </div>
-        <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
+        
 
       </div>
     </div>
