@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const FilmDetails = props => {
-  const {film} = props
+  const {film, characters, loading} = props
   return (
     <div>
        <div className="FilmDetails">
@@ -14,7 +14,17 @@ const FilmDetails = props => {
         </div>
         <div className="detailContainer">
         <h4>Characters</h4>
-        
+        <p>
+          {characters.map((character) => (
+            <span><Link to={{
+              pathname: `/details/${character.name}`,
+              state: {details: character}
+            }}>{character.name}</Link>,
+            </span>
+            
+          ))}
+          
+        </p>
         </div>
         <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
 
