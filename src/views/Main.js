@@ -19,11 +19,9 @@ export default class Home extends Component {
   handleSearch(input, selection){
     const query = selection === 'person' ? `people/?search=${input}` : `films/?search=${input}`
     const url = `${API_URL}/${query}`
-    console.log(url);
     this.setState({message: "Searching..."})
     axios.get(url)
           .then((res)=>{
-            console.log(res);
             if(res.data.count > 0){
             this.setState({
               results: res.data,
