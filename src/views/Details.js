@@ -23,6 +23,14 @@ export default class Details extends Component {
     this.isFilm ? this.getCharacters(this.state.details.characters) : this.getFilms(this.state.details.films);
   }
 
+  componentDidUpdate(prevProps){
+    if(this.props.location.pathname !== prevProps.location.pathname){
+      console.log("updated");
+      this.isFilm = !this.isFilm
+      !this.isFilm ? this.getCharacters(this.state.details.characters) : this.getFilms(this.state.details.films);
+      this.setState({details: this.props.location.state.details})
+    }
+  }
 
   getCharacters(characters){
     let charactersArr = [];
@@ -53,7 +61,6 @@ export default class Details extends Component {
       return(<p>Loading</p>)
     }else{
     if(this.isFilm){
-      console.log("characters",this.state.characters[0]);
       return(<FilmDetails film={this.state.details} characters={this.state.characters} loading={this.state.loading}/>)
     }else{
       return(<PersonDetails person={this.state.details} films={this.state.films} loading={this.state.loading}/>)
