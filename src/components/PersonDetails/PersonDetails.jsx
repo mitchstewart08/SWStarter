@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 
 const PersonDetails = props => {
   const {person, films} = props
-  console.log(films[0]);
   return (
     <div className="detailsContainer" id="details">
       <h3>{person.name}</h3>

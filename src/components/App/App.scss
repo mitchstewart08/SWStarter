@@ -33,6 +33,10 @@ button{
   &:hover{
     background-color: $secondaryDarker-color;
   }
+  &:disabled{
+    background-color: #c4c4c4;
+    color: white;
+  }
 }
 
 // h2, h3{
@@ -182,6 +186,8 @@ button{
 
   button{
     margin-top: 5rem;
+    font-size: .9rem;
+    padding: .5rem 1.5rem;
   }
 
 

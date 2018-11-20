@@ -5,16 +5,16 @@ const FilmDetails = props => {
   let {film, characters} = props
   console.log(characters)
   return (
-    <div>
+    <div className="detailsContainer">
+      <h3>{film.title}</h3>
 
-       <div className="FilmDetails">
-        <h3>{film.name}</h3>
-        <div className="detailContainer">
+       <div className="detailsGrid">
+        <div className="grid-item">
           <h4>Opening Crawl</h4>
           <p>{film.opening_crawl}</p>
         
         </div>
-        <div className="detailContainer">
+        <div className="grid-item">
         <h4>Characters</h4>
         
         <p>       
