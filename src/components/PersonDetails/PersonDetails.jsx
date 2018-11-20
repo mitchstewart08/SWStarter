@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 export default class PersonDetails extends Component {
   render() {
@@ -20,6 +21,8 @@ export default class PersonDetails extends Component {
         <div className="detailContainer">
         <h4>Movies</h4>
         </div>
+        <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
+
       </div>
     )
   }
