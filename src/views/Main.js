@@ -9,7 +9,8 @@ export default class Home extends Component {
     super(props);
     this.state = {
       results : [],
-      loading: true
+      loading: true,
+      message: "There are zero matches.\n Use the form to search for People and Movies"
     }
 
     this.handleSearch = this.handleSearch.bind(this)
@@ -19,6 +20,7 @@ export default class Home extends Component {
     const query = selection === 'person' ? `people/?search=${input}` : `films/?search=${input}`
     const url = `${API_URL}/${query}`
     console.log(url);
+    this.setState({message: "Searching..."})
     axios.get(url)
           .then((res)=>{
             console.log(res);
@@ -35,7 +37,7 @@ export default class Home extends Component {
     return (
     <div className="main-view">
       <SearchBox  handleSearch={this.handleSearch}/>
-      <ResultsBox searchResults={this.state.results} loading={this.state.loading}/>
+      <ResultsBox searchResults={this.state.results} loading={this.state.loading} message={this.state.message}/>
     </div>)
   }
 }

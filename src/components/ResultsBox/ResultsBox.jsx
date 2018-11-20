@@ -5,9 +5,9 @@ function ResultsBox(props) {
   
   return (
     <div className="box resultsBox">
-     <div className="resultsHeader"><h2>Results</h2></div>
-     {props.loading ? (<div className="search-text">There are zero matches. <br />
-     Use the form to search for People and Movies</div>)
+     <h2>Results</h2>
+     {props.loading ? (<div className="search-text"><span>There are zero matches.
+     Use the form to search for People and Movies</span></div>)
      : (props.searchResults.results.map((item) => {
         const name = item.name || item.title;
         return(

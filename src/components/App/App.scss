@@ -134,6 +134,19 @@ button{
   p{
     margin: 0;
   }
+  .search-text{
+    // display:flex;
+    span{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    div{
+      width: 100%
+      
+    }
+    text-align: center;
+    color: #c4c4c4;
+  }
 
   .result{
     display: grid;
