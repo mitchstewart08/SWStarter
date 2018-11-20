@@ -58,7 +58,7 @@ export default class Details extends Component {
 
   renderContent(){
     if(this.state.loading){
-      return(<p>Loading</p>)
+      return(<div className="loading"><h3>Loading...</h3></div>)
     }else{
     if(this.isFilm){
       return(<FilmDetails film={this.state.details} characters={this.state.characters} loading={this.state.loading}/>)

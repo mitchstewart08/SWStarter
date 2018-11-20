@@ -165,6 +165,15 @@ button{
     margin-right: 0;
   }
 }
+.loading{
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: center;
+  color: #c4c4c4;
+  min-height: 50vh
+}
 
 .detailsBox{
   width: 50vw;
