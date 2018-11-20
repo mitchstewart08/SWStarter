@@ -27,7 +27,6 @@ export default class Details extends Component {
     if(this.props.location.pathname !== prevProps.location.pathname){
       console.log("updated");
       this.isFilm = !this.isFilm
-      !this.isFilm ? this.getCharacters(this.state.details.characters) : this.getFilms(this.state.details.films);
       this.setState({details: this.props.location.state.details})
     }
   }

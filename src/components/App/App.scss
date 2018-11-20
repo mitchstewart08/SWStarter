@@ -13,9 +13,26 @@ $font-stack: 'Montserrat', sans-serif;
 
 .App{
   font-size: 16px;
+  font-family: $font-stack;
   background-color: $appBackground-color;
   height: 100vh;
   width: 100vw;
+}
+
+button{
+  border-radius: 20px;
+  background-color: $secondary-color;
+  color: white;
+  text-transform: uppercase;
+  font-family: $font-stack;
+  font-weight: bold;
+  font-size: 1.125rem;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border:none;
+  &:hover{
+    background-color: $secondaryDarker-color;
+  }
 }
 
 // h2, h3{
@@ -63,5 +80,67 @@ $font-stack: 'Montserrat', sans-serif;
     letter-spacing: normal;
     font-family: $font-stack;
     color: #383838;
+  }
+
+}
+
+.searchBox{
+  .radioButtons{
+    label{
+      margin-right: 1em;
+    }
+  }
+  input[type="text"]{
+    margin-top: 1.25em;
+    width:100%;
+    border: 1px solid #c4c4c4;
+    box-shadow: inset 0 1px 3px 0 rgba(132, 132, 132, 0.75);
+    border-radius: 4px;
+    height: 2rem;
+    font-size: 1rem;
+    padding-left: .5rem;
+    font-family: $font-stack;
+    font-weight: bold;
+  }
+
+  button{
+    margin-top: 1.25em;
+    width: 100%;
+  }
+  min-height: 50vh;
+  max-height: 50vh;
+}
+
+.main-view{
+  display: grid;
+  width: 75%;
+  margin: 0 auto;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 2rem;
+}
+
+.resultsBox{
+  .resultsHeader{
+    border-bottom: 1px solid #c4c4c4;
+    h2{
+      margin: 0;
+      font-size: 2rem;
+    }
+  }
+  p{
+    margin: 0;
+  }
+
+  .result{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #c4c4c4;
+    padding: 1rem 0;
+  }
+  button{
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

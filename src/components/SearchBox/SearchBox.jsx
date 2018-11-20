@@ -30,7 +30,7 @@ export default class SearchBox extends Component {
   }
 
   render() {
-    const moviePlaceHolder = "e.g. A New Hope, Empire Strikes Back, Rogue One";
+    const moviePlaceHolder = "e.g. A New Hope, Empire Strikes Back, Return of the Jedi";
     const personPlaceHolder = "e.g. Chewbacca, Yoda, Boba Fett"
 
     return (
