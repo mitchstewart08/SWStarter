@@ -25,8 +25,12 @@ export default class Details extends Component {
 
   componentDidUpdate(prevProps){
     if(this.props.location.pathname !== prevProps.location.pathname){
+      const{details} = this.props.location.state
+      console.log(details);
       this.isFilm = !this.isFilm
-      this.setState({details: this.props.location.state.details})
+      this.setState({loading: true})
+      this.isFilm ? this.getCharacters(details.characters) : this.getFilms(details.films);
+      this.setState({details})
     }
   }
 
@@ -39,8 +43,6 @@ export default class Details extends Component {
                                                  loading: false})
                                 })
                                 .catch(err => console.log("Error fetching characters ", err))
-
-    
   }
 
   getFilms(films){
