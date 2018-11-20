@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 
-export default class PersonDetails extends Component {
-  render() {
-    const {person} = this.props;
-    return (
-      <div className="personDetails">
+const PersonDetails = props => {
+  const {person} = props
+  return (
+    <div>
+       <div className="personDetails">
         <h3>{person.name}</h3>
         <div className="detailContainer">
           <h4>Details</h4>
@@ -24,6 +24,9 @@ export default class PersonDetails extends Component {
         <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
 
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+export default PersonDetails
+
