@@ -150,4 +150,39 @@ button{
 .detailsBox{
   width: 50vw;
   margin: 0 auto;
+
+  a{
+    text-decoration: none;
+    color: $highlight-color;
+  }
+}
+
+.detailsGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 6rem;
+  .grid-item{
+    h4{
+      border-bottom: 1px solid #c3c3c3;
+      padding-bottom: 1rem;
+    }
+    .left-item{
+      color: red;
+     }
+  }
+
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  li{
+    list-style-type: none;
+    margin-left: none;
+  }
+
+  button{
+    margin-top: 5rem;
+  }
+
+
 }

@@ -5,7 +5,7 @@ const PersonDetails = props => {
   const {person, films} = props
   console.log(films[0]);
   return (
-    <div className="detailsContainer">
+    <div className="detailsContainer" id="details">
       <h3>{person.name}</h3>
        <div className=" detailsGrid">
        <div className="grid-item">
@@ -21,7 +21,7 @@ const PersonDetails = props => {
           </ul>
           <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
         </div>
-        <div className="detailContainer movieContainer">
+        <div className="grid-item movieContainer">
         <h4>Movies</h4>
         <p>
         {films.map((film) => (
