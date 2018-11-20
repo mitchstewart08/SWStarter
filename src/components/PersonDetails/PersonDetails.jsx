@@ -2,7 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const PersonDetails = props => {
-  const {person} = props
+  const {person, films} = props
+  console.log(films[0]);
   return (
     <div>
        <div className="personDetails">
@@ -20,6 +21,16 @@ const PersonDetails = props => {
         </div>
         <div className="detailContainer">
         <h4>Movies</h4>
+        <p>
+        {films.map((film) => (
+            <span key={film.title}><Link to={{
+              pathname: `/details/${film.title}`,
+              state: {details: film}
+            }}>{film.title}</Link>,
+            </span>
+            
+          ))}
+        </p>
         </div>
         <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
 

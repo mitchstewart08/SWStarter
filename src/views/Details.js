@@ -23,20 +23,9 @@ export default class Details extends Component {
     this.isFilm ? this.getCharacters(this.state.details.characters) : this.getFilms(this.state.details.films);
   }
 
-  async getCharacters(characters){
-    let charactersArr = [];
-    // await characters.forEach((url) => {
-    //     axios.get(url)
-    //        .then((res) => {
-    //         charactersArr.push(res.data)
-    //        })
-    //          .catch((err) => console.log(err))
-      
-    // })
-    
-    // this.setState({characters: charactersArr,
-    //                loading: false})
 
+  getCharacters(characters){
+    let charactersArr = [];
     axios.all(characters.map(character => axios.get(character)))
                                 .then(res => {
                                   charactersArr = res.map((item) => item.data)
@@ -49,7 +38,14 @@ export default class Details extends Component {
   }
 
   getFilms(films){
-
+    let filmsArr = [];
+    axios.all(films.map(film => axios.get(film)))
+                                .then(res => {
+                                  filmsArr = res.map((item) => item.data)
+                                  this.setState({films: filmsArr,
+                                                 loading: false})
+                                })
+                                .catch(err => console.log("Error fetching films ", err))
   }
 
   renderContent(){

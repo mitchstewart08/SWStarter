@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const FilmDetails = props => {
-  const {film, characters} = props
+  let {film, characters} = props
   console.log(characters)
   return (
     <div>
@@ -17,18 +17,13 @@ const FilmDetails = props => {
         <div className="detailContainer">
         <h4>Characters</h4>
         
-        <p>
-          {console.log("characthers array in film details ",characters)}
-          {console.log("characthers array in film details ",characters.length)}
-          
+        <p>       
           {characters.map((character) => (
-            console.log(character)
-            // <span><Link to={{
-            //   pathname: `/details/${character.name}`,
-            //   state: {details: character}
-            // }}>{character.name}</Link>,
-            // {console.log(character)}
-            // </span>
+            <span key={character.name}><Link to={{
+              pathname: `/details/${character.name}`,
+              state: {details: character}
+            }}>{character.name}</Link>,
+            </span>
             
           ))}
         </p>
@@ -36,7 +31,9 @@ const FilmDetails = props => {
         <Link to={{pathname : '/'}}><button>Back to Search</button></Link>
 
       </div>
+      {console.log("characthers array in film details ",characters)}
     </div>
+    
   )
 }
 
