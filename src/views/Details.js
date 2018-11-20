@@ -23,19 +23,29 @@ export default class Details extends Component {
     this.isFilm ? this.getCharacters(this.state.details.characters) : this.getFilms(this.state.details.films);
   }
 
-  getCharacters(characters){
-    let charactersArray = [];
+  async getCharacters(characters){
+    let charactersArr = [];
+    // await characters.forEach((url) => {
+    //     axios.get(url)
+    //        .then((res) => {
+    //         charactersArr.push(res.data)
+    //        })
+    //          .catch((err) => console.log(err))
+      
+    // })
+    
+    // this.setState({characters: charactersArr,
+    //                loading: false})
 
-    characters.forEach((url) => {
-      axios.get(url)
-           .then((res) => {
-            charactersArray.push(res.data)})
-           .catch((err) => console.log(err))
-    })
+    axios.all(characters.map(character => axios.get(character)))
+                                .then(res => {
+                                  charactersArr = res.map((item) => item.data)
+                                  this.setState({characters: charactersArr,
+                                                 loading: false})
+                                })
+                                .catch(err => console.log("Error fetching characters ", err))
 
-    this.setState({characters: charactersArray,
-                   loading: false});
-    console.log(this.state.loading);
+    
   }
 
   getFilms(films){
@@ -46,14 +56,15 @@ export default class Details extends Component {
     if(this.state.loading){
       return(<p>Loading</p>)
     }else{
-
     if(this.isFilm){
+      console.log("characters",this.state.characters[0]);
       return(<FilmDetails film={this.state.details} characters={this.state.characters} loading={this.state.loading}/>)
     }else{
       return(<PersonDetails person={this.state.details} films={this.state.films} loading={this.state.loading}/>)
     }
   }
   }
+
 
   render() {
     
