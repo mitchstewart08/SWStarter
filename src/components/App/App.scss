@@ -39,11 +39,6 @@ button{
   }
 }
 
-// h2, h3{
-//   font: $font-stack;
-//   color: $secondary-color;
-// }
-
 .Header{
   text-align: center;
   background-color: $background-color;
@@ -135,7 +130,13 @@ button{
     margin: 0;
   }
   .search-text{
-    // display:flex;
+    height: 50%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
     span{
       display: inline-block;
       vertical-align: middle;
@@ -154,6 +155,7 @@ button{
   
     font-size: 1.5rem;
     font-weight: bold;
+    border-top: 1px solid #c4c4c4;
     border-bottom: 1px solid #c4c4c4;
     padding: 1rem 0;
   }

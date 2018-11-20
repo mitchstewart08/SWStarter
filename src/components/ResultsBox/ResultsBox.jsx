@@ -6,8 +6,7 @@ function ResultsBox(props) {
   return (
     <div className="box resultsBox">
      <h2>Results</h2>
-     {props.loading ? (<div className="search-text"><span>There are zero matches.
-     Use the form to search for People and Movies</span></div>)
+     {props.loading ? (<div className="search-text"><div className="center"><span>{props.message}</span></div></div>)
      : (props.searchResults.results.map((item) => {
         const name = item.name || item.title;
         return(
